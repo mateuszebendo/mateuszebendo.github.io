@@ -1,0 +1,180 @@
+@import url('./fonts.css');
+
+* {
+    padding: 0; 
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Font-Awesome-Social';
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 25%;
+    color: white;
+    background-color: #13a085;
+    padding-right: 40rem;
+}
+
+.titleSection {
+    width: 50%;
+    display: flex;
+    align-items: left;
+}
+
+.titleSection > span {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-family: 'FontAwesome';
+    margin: 0.5rem;
+    margin-left: 2rem;
+    font-size: 50px;
+}
+
+.navBar {
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: #19bc9b;
+}
+
+.navBarLink {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0.8rem;
+    text-decoration: none;
+    color: white;
+}
+
+.introductionSection{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(235, 235, 235);
+}
+
+.introductionSection > h1 {
+    color: #404040;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.introductionSection > p {
+    margin-top: 1.5rem;
+    width: 80%;
+}
+
+.introductionSection > p > span {
+    font-weight: 600;
+}
+
+.cardsSection {
+    display: flex;
+    color: #404040;
+    justify-content: space-around;
+    padding: 3rem 5rem;
+    border: color red;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+    margin: 2rem;
+    border: color blue;
+}
+
+.cardButton {
+    background-color: #13a085;
+    padding: 1rem;
+    color: white;
+    width: 60%;
+}
+
+.cardImage {
+    width: 100%;
+}
+
+.card > h2,h3 {
+    font-weight: 800;
+    color:#3a3a3a
+}
+
+.endSection{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(235, 235, 235);
+}
+
+.endSection > h1 {
+    color: #404040;
+    font-size: 2rem;
+}
+
+.iconEndSection {
+    margin-top: 4rem;
+    font-size: 2.7rem;
+    color: white;
+}
+
+.iconEndSection  > span{
+    background-color: #19bc9b;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    height: 25%;
+    color: white;
+    background-color: #13a085;
+}
+
+.footer > h3 {
+    font-size: 1rem;
+    color: rgba(195, 195, 195, 0.575);
+}
+
+.footer > h3 > span {
+    color: rgba(255, 255, 255, 0.828);
+}
+
+.socialMediaSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.socialMediaSection > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background-color: #19bc9b;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+}
