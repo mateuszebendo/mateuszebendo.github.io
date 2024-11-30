@@ -1,0 +1,47 @@
+.card_section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(211, 211, 211, 0.276);
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+.card {
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_title {
+    align-self: flex-start;
+    color: rgb(72, 72, 72);
+    margin-bottom: 3%;
+    font-size: 1.5rem;
+}
+
+.card > figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+    gap: 1rem;
+    margin: 3% 0;
+}
+
+.card > figure > img {
+
+    width: 100%;
+}
+
+.card_button {
+    margin-top: 1rem;
+    color: white;
+    font-weight: 800;
+    align-self:flex-start;
+    background-color: orangered;
+    padding: 1rem;
+    border-radius: 5rem;
+}

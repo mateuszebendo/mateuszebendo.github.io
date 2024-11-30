@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Component</title>
+        <style>
+            * {
+                padding: 0; 
+                margin: 0;
+            }
+            body {
+                width: 100vw;
+                height: 100vh;
+            }
+            a {
+                text-decoration: none;
+            }
+            .banner {
+                background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('../images/banner.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 70%;
+            }
+            .banner_title {
+                color: white;
+                font-size: 4.5rem;
+            }
+            .banner_designer {
+                color: rgba(255, 255, 255, 0.456);
+                font-size: 1.5rem;
+            }
+            .banner_navbar{
+                margin-top: 5%;
+                width: 50%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .banner_navbar > a {
+                color: white;
+                font-weight: 800;
+                padding: 1.7%;
+                border-radius: 10rem;
+                transition: border 0.3s ease;
+            }
+            .banner_navbar > a:hover{
+                border: solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner">
+            <h1 class="banner_title">
+                LOREM IPSUM
+            </h1>
+            <h1 class="banner_designer">
+                DESIGN BY DUOROREM
+            </h1>
+            <nav class="banner_navbar">
+                <a href="#">
+                    HOMEPAGE
+                </a>
+                <a href="#">
+                    LEFT SIDEBAR
+                </a>
+                <a href="#">
+                    RIGHT SIDEBAR
+                </a>
+                <a href="#">
+                    NO SIDEBAR
+                </a>
+            </nav>
+        </div>
+    </body>
+</html>
