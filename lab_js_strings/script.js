@@ -74,6 +74,54 @@ btn03.addEventListener("click", () => {
 
 ////////////////////////
 
+const divFrequencia = document.getElementById("frequencia-container")
+const inputFrequencia = document.getElementById("frequencia-input")
+const btnFrequencia = document.getElementById("frequencia-button")
+
+const achaMaiorItem = (array) => {
+    let aux = { key: null, value: -Infinity }; 
+
+    for (let i = 0; i < array.length; i++) {
+        const [key, value] = array[i];
+        if (value > aux.value) {
+            aux = { key, value };
+        }
+    }
+
+    return aux;
+};
+
+const achaPalavraMaisFrequente = (texto) => {
+    const palavras = texto.trim().split(" ");
+    const frequenciaMap = {};
+
+    palavras.forEach((palavra) => {
+        if (frequenciaMap[palavra]) {
+            frequenciaMap[palavra]++;
+        } else {
+            frequenciaMap[palavra] = 1;
+        }
+    });
+
+    const entries = Object.entries(frequenciaMap);
+
+    const palavraMaisFrequente = achaMaiorItem(entries);
+
+    return `${palavraMaisFrequente.key} - ${palavraMaisFrequente.value}`;
+};
+
+btnFrequencia.addEventListener("click", () => {
+    const texto = inputFrequencia.value.trim()
+    
+    const palavraMaisFrequente = achaPalavraMaisFrequente(texto)
+    const h1Element = document.createElement("h1")
+    h1Element.textContent = palavraMaisFrequente
+
+    divFrequencia.appendChild(h1Element)
+})
+
+////////////////////////
+
 const divTxt = document.getElementById("texto-modificar-container")
 const inputTxt = document.getElementById("texto-modificar-input")
 const inputAchar = document.getElementById("texto-procurar-input")
@@ -231,6 +279,7 @@ btnSemana.addEventListener("click", () => {
 })
 
 ////////////////////////
+
 
 ////////////////////////
 
