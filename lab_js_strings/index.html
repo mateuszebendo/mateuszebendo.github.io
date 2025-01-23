@@ -107,6 +107,34 @@
                 </button>
             </div>
         </div>
+        <div class="container" id="data-container">
+            <li>
+                Faça um programa que leia uma data de nascimento em formato de dd/mm/aaaa e escreva por extenso a data. Por exemplo: 03/05/2017 vira "03 de maio de 2017".
+            </li>
+            <div>
+                <label for="data-input">
+                    Insira uma data:
+                </label>
+                <input name="data-input" type="text" placeholder="DIA/MES/ANO" id="data-input" />
+                <button id="data-button">
+                    Escrever
+                </button>
+            </div>
+        </div>
+        <div class="container" id="semana-container">
+            <li>
+                Faça um programa que leia duas datas e indique em semanas a distância entre elas. Por exemplo:
+                02/05/2017 e 02/07/2017 resultado = 8 semanas.
+            </li>
+            <div>
+                <!--Vou usar input do tipo date, mas se fossem text o principio seria o mesmo, apenas mudando que ao inves de hifen seriam barras no split()-->
+                <input name="primeira-semana-input" type="date" id="primeira-semana-input" />
+                <input name="segunda-semana-input" type="date" id="segunda-semana-input" />
+                <button id="semana-button">
+                    Calcular
+                </button>
+            </div>
+        </div>
         <div class="container" id="div-objeto-aleatoria">
             <li>
                 Extra

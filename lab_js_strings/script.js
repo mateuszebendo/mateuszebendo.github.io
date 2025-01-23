@@ -126,6 +126,10 @@ btnSubs.addEventListener("click", () => {
 
 ////////////////////////
 
+
+
+////////////////////////
+
 const divDate = document.getElementById("nascimento-container")
 const inputDate = document.getElementById("nascimento-input")
 const btnDate = document.getElementById("nascimento-button")
@@ -158,6 +162,75 @@ btnDate.addEventListener("click", () => {
     divDate.appendChild(novoH1)
 })
 
+////////////////////////
+
+const divData = document.getElementById("data-container")
+const inputData = document.getElementById("data-input")
+const btnData = document.getElementById("data-button")
+const meses = [
+    "Janeiro", 
+    "Fevereiro", 
+    "Março", 
+    "Abril", 
+    "Maio", 
+    "Junho", 
+    "Julho", 
+    "Agosto", 
+    "Setembro", 
+    "Outubro", 
+    "Novembro", 
+    "Dezembro"
+];
+
+const escreverDataPorExtenso = (data) => {
+    return data.map(( value, index ) => {
+        if(index === 1) return `de ${meses[value - 1]} de`
+        return value
+    }).join(" ")
+}
+
+btnData.addEventListener("click", () => {
+    const data = inputData.value.trim().split("/")
+
+    const dataFormatada = escreverDataPorExtenso(data) 
+    const novoH1 = document.createElement("h1")
+    novoH1.textContent = dataFormatada
+
+    divData.appendChild(novoH1)
+})
+
+////////////////////////
+
+const divSemana = document.getElementById("semana-container")
+const inputPrimeriaData = document.getElementById("primeira-semana-input")
+const inputSegundaData = document.getElementById("segunda-semana-input")
+const btnSemana = document.getElementById("semana-button")
+
+const calculaDiferencaDeSemanas = (primeiraData, segundaData) => {
+    const [ano1, mes1, dia1] = primeiraData.map(Number)
+    const [ano2, mes2, dia2] = segundaData.map(Number)
+    const data1 = new Date(ano1, mes1 - 1, dia1)
+    const data2 = new Date(ano2, mes2 - 1, dia2)
+
+    const diferencaMilissegundos = data1 >= data2 ? data1 - data2 : data2 - data1
+
+    const diferencaSemanas = Math.floor(diferencaMilissegundos / (1000 * 60 * 60 * 24 * 7));
+
+    return diferencaSemanas + " semanas"
+}
+
+btnSemana.addEventListener("click", () => {
+    const primeiraData = inputPrimeriaData.value.split("-")
+    const segundaData = inputSegundaData.value.split("-")
+
+    const diferencaSemanas = calculaDiferencaDeSemanas(primeiraData, segundaData)
+    const novoH1 = document.createElement("h1")
+    novoH1.textContent = diferencaSemanas
+
+    divSemana.appendChild(novoH1)
+})
+
+////////////////////////
 
 ////////////////////////
 
