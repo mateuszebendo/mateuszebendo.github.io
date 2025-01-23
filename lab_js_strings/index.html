@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>lab_js_strings</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+    <ol>
+        <div class="container">
+            <li>
+                Faça um programa que leia uma frase e escreva abaixo invertendo os caracteres - o primeiro se torna o
+                último, o segundo o penúltimo e assim por diante
+            </li>
+            <div>
+                <label for="inverter-string">
+                    Insira a string:
+                </label>
+                <input id="inverter-string-input" name="inverter-string" type="text" placeholder="Insira" />
+                <button id="inverter-string-button">
+                    Inverter
+                </button>
+            </div>
+            <div class="display-string-invertida"></div>
+        </div>
+
+        <div class="container">
+            <li>
+                Faça um programa que leia uma frase e escreva abaixo marcando as vogais em negrito
+            </li>
+            <div>
+                <label for="marcar-vogais-input">
+                    Insira a string:
+                </label>
+                <input name="marcar-vogais-input" type="text" placeholder="Insira" id="marcar-vogais-input" />
+                <button id="marcar-vogais-button">
+                    Marcar
+                </button>
+            </div>
+            <div class="display-marcar-vogais"></div>
+        </div>
+
+        <div class="container">
+            <li>
+                Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas
+                o número de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de
+                ocorrências
+            </li>
+            <div>
+                <label for="texto-input">
+                    Insira o texto:
+                </label>
+                <input name="texto-input" type="text" placeholder="Insira" id="texto-input" />
+                <button id="texto-button">
+                    Contar
+                </button>
+            </div>
+            <table>
+                <tr id="texto-table-head">
+
+                </tr>
+                <tr id="texto-table-row">
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="container" id="texto-modificar-container">
+            <li>
+                Faça um programa que implemente a funcionalidade substituir em textos, ou seja, terá um campo
+                "procurar" e um campo "substituir". Ao executar, seu programa deverá procurar as ocorrências no texto do
+                valor digitado em "procurar" e trocar pelo valor digitado em "substituir".
+            </li>
+            <div>
+                <label for="texto-modificar-input">
+                    Texto
+                </label>
+                <input name="texto-modificar-input" type="text" placeholder="Insira o texto" id="texto-modificar-input"/>
+                <label for="texto-procurar-input">
+                    Procurar
+                </label>
+                <input name="texto-procurar-input" type="text" placeholder="Procurar..." id="texto-procurar-input" />
+                <button id="texto-procurar-button">
+                    Procurar
+                </button>
+                <label for="texto-substituir-input">
+                    Substituir
+                </label>
+                <input name="texto-substituir-input" type="text" placeholder="Substituir por..." id="texto-substituir-input" />
+                <button id="texto-substituir-button">
+                    Substituir
+                </button>
+            </div>
+        </div>
+        <div class="container" id="nascimento-container">
+            <li>
+                Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem
+            </li>
+            <div>
+                <label for="nascimento-input">
+                    Insira sua data de nascimento: 
+                </label>
+                <input name="nascimento-input" type="date" placeholder="Insira" id="nascimento-input" />
+                <button id="nascimento-button">
+                    Contar
+                </button>
+            </div>
+        </div>
+        <div class="container" id="div-objeto-aleatoria">
+            <li>
+                Extra
+            </li>
+            <button id="button-objeto-aleatoria">
+                Criar objeto aleatorio
+            </button>
+        </div>
+    </ol>
+    <script src="./script.js"></script>
+</body>
+
+</html>
