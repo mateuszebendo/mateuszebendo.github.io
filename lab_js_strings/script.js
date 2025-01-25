@@ -1,3 +1,7 @@
+console.log("Arquivo javascript carregado com sucesso!")
+
+/////////////////////////
+
 const input01 = document.getElementById("inverter-string-input");
 const btn01 = document.getElementById("inverter-string-button");
 
@@ -174,10 +178,6 @@ btnSubs.addEventListener("click", () => {
 
 ////////////////////////
 
-
-
-////////////////////////
-
 const divDate = document.getElementById("nascimento-container")
 const inputDate = document.getElementById("nascimento-input")
 const btnDate = document.getElementById("nascimento-button")
@@ -280,6 +280,32 @@ btnSemana.addEventListener("click", () => {
 
 ////////////////////////
 
+const divPalavraForte = document.getElementById("palavra-forte-container")
+const inputPalavraForte = document.getElementById("palavra-forte-input")
+const btnPalavraForte = document.getElementById("palavra-forte-button")
+
+const analisaPalavra = (palavra) => {
+    if (
+        palavra.search(/[A-Z]/) >= 0 &&
+        palavra.search(/[0-9]/) >= 0 &&
+        palavra.search(/[#?!@$%^&*-]/) >= 0
+    ) {
+        return "green";
+    } else if (
+        palavra.search(/[A-Z]/) >= 0 &&
+        palavra.search(/[0-9]/) >= 0
+    ) {
+        return "orange";
+    } else {
+        return "red";
+    }
+};
+
+btnPalavraForte.addEventListener("click", () => {
+    const palavra = inputPalavraForte.value.trim() 
+    const resultadoAnalise = analisaPalavra(palavra)
+    inputPalavraForte.style.color = resultadoAnalise
+})
 
 ////////////////////////
 
