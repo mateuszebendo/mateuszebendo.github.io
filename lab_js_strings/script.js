@@ -83,7 +83,7 @@ const inputFrequencia = document.getElementById("frequencia-input")
 const btnFrequencia = document.getElementById("frequencia-button")
 
 const achaMaiorItem = (array) => {
-    let aux = { key: null, value: -Infinity }; 
+    let aux = { key: null, value: -Infinity };
 
     for (let i = 0; i < array.length; i++) {
         const [key, value] = array[i];
@@ -116,7 +116,7 @@ const achaPalavraMaisFrequente = (texto) => {
 
 btnFrequencia.addEventListener("click", () => {
     const texto = inputFrequencia.value.trim()
-    
+
     const palavraMaisFrequente = achaPalavraMaisFrequente(texto)
     const h1Element = document.createElement("h1")
     h1Element.textContent = palavraMaisFrequente
@@ -135,9 +135,8 @@ const btnSubs = document.getElementById("texto-substituir-button")
 
 const acharPalavra = (texto, palavra) => {
     return texto.map((palavraTexto) => {
-        if(palavraTexto.toLowerCase() === palavra.toLowerCase())
-        {
-            return`${palavraTexto.toUpperCase()}`
+        if (palavraTexto.toLowerCase() === palavra.toLowerCase()) {
+            return `${palavraTexto.toUpperCase()}`
         }
         return palavraTexto
     }).join(" ")
@@ -145,7 +144,7 @@ const acharPalavra = (texto, palavra) => {
 
 const substituirPalavra = (texto, antigaPalavra, novaPalavra) => {
     return texto.map((palavraTexto) => {
-        if(palavraTexto.toLowerCase() === antigaPalavra.toLowerCase()){
+        if (palavraTexto.toLowerCase() === antigaPalavra.toLowerCase()) {
             return novaPalavra
         }
         return palavraTexto
@@ -160,7 +159,7 @@ btnAchar.addEventListener("click", () => {
 
     const novaDiv = document.createElement("div")
     novaDiv.textContent = textoMarcado
-    
+
     divTxt.appendChild(novaDiv)
 })
 
@@ -171,7 +170,7 @@ btnSubs.addEventListener("click", () => {
 
     const novoTexto = substituirPalavra(texto, antigaPalavra, novaPalavra)
     const novaDiv = document.createElement("div")
-    novaDiv.textContent = novoTexto 
+    novaDiv.textContent = novoTexto
 
     divTxt.appendChild(novaDiv)
 })
@@ -185,15 +184,14 @@ const btnDate = document.getElementById("nascimento-button")
 const calculaDiasVida = (dateArray) => {
     const [ano, mes, dia] = dateArray.map(Number);
     const dataNascimento = new Date(ano, mes - 1, dia); // Meses começam de 0 (jan) a 11 (dez)
-    
-    const hoje = Date.now(); 
+
+    const hoje = Date.now();
 
     const diferencaMilissegundos = hoje - dataNascimento;
 
     const diferencaDias = Math.floor(diferencaMilissegundos / (1000 * 60 * 60 * 24));
 
-    if(diferencaDias < 0)
-    {
+    if (diferencaDias < 0) {
         return "Data inválida"
     }
     return diferencaDias;
@@ -204,7 +202,7 @@ btnDate.addEventListener("click", () => {
     console.log(date)
 
     const totalDiasVida = calculaDiasVida(date);
-    const novoH1 = document.createElement("h1");    
+    const novoH1 = document.createElement("h1");
     novoH1.textContent = totalDiasVida;
 
     divDate.appendChild(novoH1)
@@ -216,23 +214,23 @@ const divData = document.getElementById("data-container")
 const inputData = document.getElementById("data-input")
 const btnData = document.getElementById("data-button")
 const meses = [
-    "Janeiro", 
-    "Fevereiro", 
-    "Março", 
-    "Abril", 
-    "Maio", 
-    "Junho", 
-    "Julho", 
-    "Agosto", 
-    "Setembro", 
-    "Outubro", 
-    "Novembro", 
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
     "Dezembro"
 ];
 
 const escreverDataPorExtenso = (data) => {
-    return data.map(( value, index ) => {
-        if(index === 1) return `de ${meses[value - 1]} de`
+    return data.map((value, index) => {
+        if (index === 1) return `de ${meses[value - 1]} de`
         return value
     }).join(" ")
 }
@@ -240,7 +238,7 @@ const escreverDataPorExtenso = (data) => {
 btnData.addEventListener("click", () => {
     const data = inputData.value.trim().split("/")
 
-    const dataFormatada = escreverDataPorExtenso(data) 
+    const dataFormatada = escreverDataPorExtenso(data)
     const novoH1 = document.createElement("h1")
     novoH1.textContent = dataFormatada
 
@@ -285,16 +283,13 @@ const inputPalavraForte = document.getElementById("palavra-forte-input")
 const btnPalavraForte = document.getElementById("palavra-forte-button")
 
 const analisaPalavra = (palavra) => {
-    if (
-        palavra.search(/[A-Z]/) >= 0 &&
-        palavra.search(/[0-9]/) >= 0 &&
-        palavra.search(/[#?!@$%^&*-]/) >= 0
-    ) {
+    const temMaiuscula = /[A-Z]/.test(palavra);
+    const temNumero = /[0-9]/.test(palavra);
+    const temEspecial = /[#?!@$%^&*-]/.test(palavra);
+
+    if (temMaiuscula && temNumero && temEspecial) {
         return "green";
-    } else if (
-        palavra.search(/[A-Z]/) >= 0 &&
-        palavra.search(/[0-9]/) >= 0
-    ) {
+    } else if (temMaiuscula && temNumero) {
         return "orange";
     } else {
         return "red";
@@ -302,9 +297,56 @@ const analisaPalavra = (palavra) => {
 };
 
 btnPalavraForte.addEventListener("click", () => {
-    const palavra = inputPalavraForte.value.trim() 
+    const palavra = inputPalavraForte.value.trim()
     const resultadoAnalise = analisaPalavra(palavra)
     inputPalavraForte.style.color = resultadoAnalise
+})
+
+////////////////////////
+//TENIS
+//POLAR 
+
+const divTenisPolar = document.getElementById("tenis-polar-container")
+const inputTenisPolar = document.getElementById("tenis-polar-input")
+const btnTenisPolar = document.getElementById("tenis-polar-button")
+
+const codificaEmTenisPolar = (texto) => {
+    // Mapeamento bidirecional
+    const mapa = {
+        't': 'p',
+        'p': 't',
+        'e': 'o',
+        'o': 'e',
+        'n': 'l',
+        'l': 'n',
+        'i': 'a',
+        'a': 'i',
+        's': 'r',
+        'r': 's'
+    };
+
+    return texto.split(" ").map((palavra) => {
+        return palavra.split("").map((letra) => {
+            const isUpperCase = letra === letra.toUpperCase();
+            const letraMinuscula = letra.toLowerCase();
+            if (mapa.hasOwnProperty(letraMinuscula)) {
+                const letraSubstituida = mapa[letraMinuscula];
+                return isUpperCase ? letraSubstituida.toUpperCase() : letraSubstituida;
+            }
+            return letra;
+        }).join("");
+    }).join(" ");
+}
+
+btnTenisPolar.addEventListener("click", () => {
+    const texto = inputTenisPolar.value.trim()
+
+    const textoCodificado = codificaEmTenisPolar(texto)
+
+    const novoH1 = document.createElement("h1")
+    novoH1.textcontent = textoCodificado
+
+    divTenisPolar.appendChild(novoH1)
 })
 
 ////////////////////////
@@ -341,7 +383,7 @@ const gerarLista = (object) => {
 btnTeste.addEventListener("click", () => {
     const newObj = geraObjeto();
     const newHtmlElement = gerarLista(newObj);
-    divTeste.appendChild(newHtmlElement);   
+    divTeste.appendChild(newHtmlElement);
 
     const pessoa = {
         falar: function () {
