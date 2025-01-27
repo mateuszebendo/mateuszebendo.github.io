@@ -13,30 +13,22 @@ const filmes = await fetch(url)
 
 const mainDiv = document.getElementById("main-container");
 
+const criaElementoPersonalizado = (type, className) => {
+    const element = document.createElement(type)
+    element.setAttribute("class", className)
+
+    return element
+}
+
 filmes.forEach((filme) => {
-    const cardFilm = document.createElement("div");
-    cardFilm.setAttribute("class", "card-film");
-
-    const cardTopPart = document.createElement("div");
-    cardTopPart.setAttribute("class", "card-top-part");
-
-    const cardInfo = document.createElement("div");
-    cardInfo.setAttribute("class", "card-info");
-
-    const cardTitle = document.createElement("p");
-    cardTitle.setAttribute("class", "card-title");
-
-    const cardCategories = document.createElement("p");
-    cardCategories.setAttribute("class", "card-categories");
-
-    const cardCast = document.createElement("p");
-    cardCast.setAttribute("class", "card-cast");
-
-    const cardClassification = document.createElement("p");
-    cardClassification.setAttribute("class", "card-classification");
-
-    const cardDescription = document.createElement("div");
-    cardDescription.setAttribute("class", "card-card-description");
+    const cardFilm = criaElementoPersonalizado("div", "card-film")
+    const cardTopPart = criaElementoPersonalizado("div", "card-top-part");
+    const cardInfo = criaElementoPersonalizado("div", "card-info");
+    const cardTitle = criaElementoPersonalizado("p","card-title");
+    const cardCategories = criaElementoPersonalizado("p", "card-categories");
+    const cardCast = criaElementoPersonalizado("p", "card-cast");
+    const cardClassification = criaElementoPersonalizado("p", "card-classification");
+    const cardDescription = criaElementoPersonalizado("div", "card-card-description");
 
     const novaImagem = document.createElement("img");
     novaImagem.setAttribute("src", filme.figura);
